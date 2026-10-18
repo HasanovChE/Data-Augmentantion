@@ -7,7 +7,7 @@ def get_datasets(augmentation=None):
     ]
     
     if augmentation is not None:
-        train_transform = transforms.Compose(augmentation + base_transform)
+        train_transform = transforms.Compose(base_transform + augmentation)
     else:
         train_transform = transforms.Compose(base_transform)
         

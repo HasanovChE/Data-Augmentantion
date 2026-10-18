@@ -1,0 +1,5 @@
+configuration,final_validation_accuracy,best_validation_accuracy,training_time_seconds,epochs,seed
+baseline,0.9902,0.9908,320.3965342190004,5,42
+rotation,0.9916,0.9916,309.5063123529999,5,42
+rotation_shift,0.9888,0.9895,411.80747102700025,5,42
+rotation_shift_noise,0.9885,0.9904,359.6957803639998,5,42

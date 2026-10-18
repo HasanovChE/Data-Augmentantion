@@ -6,6 +6,7 @@ __pycache__/
 .Python
 env/
 venv/
+.venv/
 lib/
 lib64/
 bin/
@@ -23,3 +24,5 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+models/

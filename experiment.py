@@ -10,8 +10,8 @@ from augmentations import (
 )
 from train import train_model
 
-EPOCHS = 10
-BATCH_SIZE = 128
+EPOCHS = 5
+BATCH_SIZE = 64
 SEED = 42
 
 CONFIGS = {
@@ -23,6 +23,7 @@ CONFIGS = {
 
 if __name__ == '__main__':
     os.makedirs("results/models", exist_ok=True)
+    csv_path = "results/results.csv"
 
     all_results = []
 
@@ -60,17 +61,19 @@ if __name__ == '__main__':
         model_path = f"results/models/{name}.pt"
         torch.save(model.state_dict(), model_path)
         
-        all_results.append({
+        row = {
             "configuration": name,
             "final_validation_accuracy": final_accuracy,
             "best_validation_accuracy": best_accuracy,
             "training_time_seconds": training_time,
             "epochs": EPOCHS,
             "seed": SEED
-        })
+        }
+        all_results.append(row)
 
-    results_df = pd.DataFrame(all_results)
-    results_df.to_csv("results/results.csv", index=False)
+        pd.DataFrame(all_results).to_csv(csv_path, index=False)
 
-    print()
-    print(results_df)
+    print("\n" + "=" * 60)
+    print("ALL 4 MODELS TRAINED SUCCESSFULLY FROM SCRATCH!")
+    print("=" * 60)
+    print(pd.read_csv(csv_path))
