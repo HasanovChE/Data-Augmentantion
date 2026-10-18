@@ -1,0 +1,25 @@
+# Byte-code files
+*.pyc
+__pycache__/
+
+# Distribution / packaging
+.Python
+env/
+venv/
+lib/
+lib64/
+bin/
+include/
+share/
+*.egg-info/
+.installed.cfg
+*.whl
+dist/
+build/
+
+# IDEs
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
